@@ -13,20 +13,20 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "Hacking Tube 2.0"
-name: "Bruce Chen"
+title: "Malware Analysis"
+name: "Gameel Ali"
 description: >- # this means to ignore newlines until "baseurl:"
     Security and stuff
-repository: "bruce30262/bruce30262.github.io"
-url: "https://bruce30262.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+repository: "malgamy/malgamy.github.io"
+url: "https://malgamy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "" # the subpath of your site, e.g. /blog
 
 # Author
 author:
-  name     : "Bruce Chen"
+  name     : "Gameel Ali"
   avatar   : "/assets/images/other/gravatar.png"
-  bio      : "Vulnerability Researcher / CTFer"
-  location : "Taiwan" 
+  bio      : "Malware Researcher / CTF player"
+  location : "Egypt" 
   links:
     - label: "About"
       icon: "fas fa-fw fa-user"
@@ -36,7 +36,7 @@ author:
       url: "https://twitter.com/bruce30262"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/bruce30262"
+      url: "https://github.com/malgamy"
     - label: "RSS"
       icon: "fas fa-fw fa-rss-square"
       url: "/feed.xml"
@@ -136,7 +136,7 @@ analytics:
 comments:
   provider: "disqus"
   disqus:
-    shortname: "bruce30262logdown"
+    shortname: "malgamy"
 
 
 # MISC
