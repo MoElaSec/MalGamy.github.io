@@ -34,12 +34,12 @@ for lab...
 The goals of this lab are able to build up hashes for samples ,identifying file types and extracting strings 
 from this samples and use this information to build IOCS..
 ## Tools 
-PowerShell
-BinText
-Bstrings
-ssdeep
-FireEye Labs Obfuscated String Solver (FLOSS)
-Strings (Tsurugi Linux) – for offline usage
+* PowerShell
+* BinText
+* Bstrings
+* ssdeep
+* FireEye Labs Obfuscated String Solver (FLOSS)
+* Strings (Tsurugi Linux) – for offline usage
 ## File hahes 
 It is very important to generate file hashes of the artifects that you deal with in this lab 
 because it helps in your reports in malware analysis and i will use a couple of tools to generate
