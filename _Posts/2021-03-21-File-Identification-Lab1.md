@@ -28,8 +28,8 @@ many people that begine in malware analysis around the world
 for lab...
 ## Samples 
 * sample_1 [Here](https://app.any.run/tasks/328bfbaf-dd18-4460-a49d-ed842213be64/)
-* sample_2 [Here](https://app.any.run/tasks/d3968bd2-3250-4bb0-8698-1800c46ea014/)
-* sample_3 [Here](https://app.any.run/tasks/23d99d24-239a-4ad6-a809-1650f3779f91/)
+* sample_2 [Here](https://app.any.run/tasks/4157c52f-2a63-4a1c-a318-d39650b2e6f4/#)
+* sample_3 [Here](https://app.any.run/tasks/e99a8b84-f618-4fcf-81ec-b952ea5335f3/#)
 ## Goals 
 The goals of this lab are able to build up hashes for samples ,identifying file types and extracting strings 
 from this samples and use this information to build IOCS..
