@@ -27,9 +27,9 @@ many people that begine in malware analysis around the world
 ,i will write many labs and write every step in details
 for lab...
 ## Samples 
-You can donaload sample_1 [Here](https://app.any.run/tasks/328bfbaf-dd18-4460-a49d-ed842213be64/)
-You can donaload sample_2 [Here](https://app.any.run/tasks/d3968bd2-3250-4bb0-8698-1800c46ea014/)
-You can donaload sample_3 [Here](https://app.any.run/tasks/23d99d24-239a-4ad6-a809-1650f3779f91/)
+* sample_1 [Here](https://app.any.run/tasks/328bfbaf-dd18-4460-a49d-ed842213be64/)
+* sample_2 [Here](https://app.any.run/tasks/d3968bd2-3250-4bb0-8698-1800c46ea014/)
+* sample_3 [Here](https://app.any.run/tasks/23d99d24-239a-4ad6-a809-1650f3779f91/)
 ## Goals 
 The goals of this lab are able to build up hashes for samples ,identifying file types and extracting strings 
 from this samples and use this information to build IOCS..
