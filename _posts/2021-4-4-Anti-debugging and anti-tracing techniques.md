@@ -36,11 +36,8 @@ I will presents several anti-debugging techniques that used on windows NT-base o
 ### Return value
 IsDebuggerPresent returns 1 if the process is being debugged, 0 otherwise. This API simply reads the PEB!BeingDebugged byte-flag (located at offset 2 in the PEB structure Circumventing it is as easy as setting PEB!BeingDebugged to 0.
 ### EXample
-```call IsDebuggerPresent
-test eax, eax
-jne @DebuggerDetected```
-
 ![600px-IsDebuggerPresent-example](https://user-images.githubusercontent.com/74544712/113519140-b59e2d80-958a-11eb-990e-e24eb762f444.png)
+
 
 
 
