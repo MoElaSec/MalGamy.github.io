@@ -17,7 +17,9 @@ toc: true
 toc_label: Table of Contents
 toc_sticky: true
 ---
-Malware authors use Anti-Reverse Engineering Techniques alot to impede the reverse engineering process of the malware .the malware analyst runs malware samples in debugger to analyze the functionality and behavoir.the malware samples plays a lot of tricks to recognizes the dubuggers that are running with the help of Anti-reverse engineeringtechniques.when malware recognizes the dubuggers ,it hide the malicious functionality ot it may terminate.
+Malware authors use Anti-Reverse Engineering Techniques alot to impede the reverse engineering process of the malware .the malware analyst runs malware samples in debugger to analyze the functionality and behavoir.
+
+the malware samples plays a lot of tricks to recognizes the dubuggers that are running with the help of Anti-reverse engineeringtechniques.when malware recognizes the dubuggers ,it hide the malicious functionality ot it may terminate.
 
 <!-- more -->
 
