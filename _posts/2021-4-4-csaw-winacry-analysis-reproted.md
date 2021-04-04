@@ -34,11 +34,11 @@ date: '2021-03-23 08:59:00 +0000'
  * FireEye Labs Obfuscated String Solver (FLOSS)
  * Strings (Tsurugi Linux) – for offline usage
 ## File hahes 
-It is very important to generate file hashes of the artifects that you deal with in this lab 
-because it helps in your reports in malware analysis and i will use a couple of tools to generate
-the hashes for all of the samples i will be dealing with.
-let us start by using the CLI and generting the hashes for MD5,SHA1 and SHA256.
-I will be using the PowerShell Get-FileHash cmdlet with the different algorithms, starting with (md5) in photo (1)
+ It is very important to generate file hashes of the artifects that you deal with in this lab 
+ because it helps in your reports in malware analysis and i will use a couple of tools to generate
+ the hashes for all of the samples i will be dealing with.
+ let us start by using the CLI and generting the hashes for MD5,SHA1 and SHA256.
+ I will be using the PowerShell Get-FileHash cmdlet with the different algorithms, starting with (md5) in photo (1)
 
 `Get-FileHash .\sampleA* -Algorithm MD5`
 
