@@ -22,7 +22,9 @@ the malware analyst runs malware samples in debuggerto analyze the functionality
 the malware samples plays a lot of tricks to recognizes 
 the dubuggers that are running with the help of Anti-reverse engineering techniques .
 when malware recognizes the dubuggers ,it hide the malicious functionality ot it may terminate.
+
 <!-- more -->
+
 I will presents several anti-debugging techniques that used on windows NT-base operationg systems.
 Anti-debugging techniques are ways for a program to detected if it runs under control of a debugger.
 they are used by commercial executable protector,packers and malicious software to prevent or is 
