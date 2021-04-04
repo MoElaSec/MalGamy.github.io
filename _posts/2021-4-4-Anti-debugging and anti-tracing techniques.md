@@ -23,10 +23,17 @@ Malware authors use Anti-Reverse Engineering Techniques alot to impede the rever
 
 I will presents several anti-debugging techniques that used on windows NT-base operationg systems.Anti-debugging techniques are ways for a program to detected if it runs under control of a debugger.they are used by commercial executable protector,packers and malicious software to prevent or is slow-down the process of reverse-engineering.
 
-##IsDebuggerPresent
+## IsDebuggerPresent
 
-IsDebuggerPresent(), the most widely used anti-debugging method in Windows. However, here we will go a little bit into what isDebuggerPresent() does internally. As we can read in Microsoft’s documentation, it comes with a very simple prototype from Kernel32 library.
-'''
-   BOOL WINAPI IsDebuggerPresent(void);
-'''
+[IsDebuggerPresent()](https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-isdebuggerpresent), the most widely used anti-debugging method in Windows. However, here we will go a little bit into what isDebuggerPresent() does internally. As we can read in Microsoft’s documentation, it comes with a very simple prototype from Kernel32 library.
+
+```BOOL IsDebuggerPresent();
+```
+IsDebuggerPresent returns 1 if the process is being debugged, 0 otherwise. This API simply reads the PEB!BeingDebugged byte-flag (located at offset 2 in the PEB structure Circumventing it is as easy as setting PEB!BeingDebugged to 0.
+
+![600px-IsDebuggerPresent-example](https://user-images.githubusercontent.com/74544712/113519140-b59e2d80-958a-11eb-990e-e24eb762f444.png)
+
+
+
+
 
