@@ -17,13 +17,13 @@ toc: true
 toc_label: Table of Contents
 toc_sticky: true
 ---
-Malware authors use Anti-Reverse Engineering Techniques alot to impede the reverse engineering process of the malware .the malware analyst runs malware samples in debugger to analyze the functionality and behavoir.
+1--> Malware authors use Anti-Reverse Engineering Techniques alot to impede the reverse engineering process of the malware .the malware analyst runs malware samples in debugger to analyze the functionality and behavoir.
 
-the malware samples plays a lot of tricks to recognizes the dubuggers that are running with the help of Anti-reverse engineeringtechniques.when malware recognizes the dubuggers ,it hide the malicious functionality ot it may terminate.
+2--> the malware samples plays a lot of tricks to recognizes the dubuggers that are running with the help of Anti-reverse engineeringtechniques.when malware recognizes the dubuggers ,it hide the malicious functionality ot it may terminate.
 
 <!-- more -->
 
-I will presents several anti-debugging techniques that used on windows NT-base operationg systems.Anti-debugging techniques are ways for a program to detected if it runs under control of a debugger.they are used by commercial executable protector,packers and malicious software to prevent or is slow-down the process of reverse-engineering.
+3--> I will presents several anti-debugging techniques that used on windows NT-base operationg systems.Anti-debugging techniques are ways for a program to detected if it runs under control of a debugger.they are used by commercial executable protector,packers and malicious software to prevent or is slow-down the process of reverse-engineering.
 
 ## IsDebuggerPresent
 
