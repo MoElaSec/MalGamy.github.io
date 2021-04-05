@@ -27,6 +27,9 @@ toc_sticky: true
 
 ## IsDebuggerPresent
 
+![400px-IsDebuggerPresent-example](https://user-images.githubusercontent.com/74544712/113621781-5b6d9d00-965c-11eb-965d-e13ae736897d.png)
+
+
 ### Description 
 
 [IsDebuggerPresent()](https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-isdebuggerpresent), the most widely used anti-debugging method in Windows. However, here we will go a little bit into what isDebuggerPresent() does internally. As we can read in Microsoft’s documentation, it comes with a very simple prototype from Kernel32 library.
@@ -36,9 +39,13 @@ toc_sticky: true
 ```BOOL IsDebuggerPresent();
 ```
 ### Return value
-IsDebuggerPresent returns 1 if the process is being debugged, 0 otherwise. This API simply reads the PEB!BeingDebugged byte-flag (located at offset 2 in the PEB structure Circumventing it is as easy as setting PEB!BeingDebugged to 0.
-### EXample
-![600px-IsDebuggerPresent-example](https://user-images.githubusercontent.com/74544712/113519140-b59e2d80-958a-11eb-990e-e24eb762f444.png)
+IsDebuggerPresent returns 1 if the process is being debugged or returns 0 if the process is not being debugged . This API simply reads the PEB!BeingDebugged byte-flag (located at offset 2 in the PEB structure Circumventing it is as easy as setting PEB!BeingDebugged to 0.
+### bypass IsDebuggerPresent with x32dbg 
+if you want your application never check it do this:
+#### Step_1
+
+
+
 
 
 
