@@ -43,6 +43,34 @@ IsDebuggerPresent returns 1 if the process is being debugged or returns 0 if the
 ### bypass IsDebuggerPresent with x32dbg 
 if you want your application never check it do this:
 #### Step_1
+* Press Alt + e or open view and select Symbol Info modules window.
+
+![جميل](https://user-images.githubusercontent.com/74544712/113626598-a8ed0880-9662-11eb-88b8-318f62bcf6d5.png)
+
+#### step_2 
+
+* Select C:\WINDOWS\sysWoW64\kernel32.dll and press ctrl + N.
+
+* select IsDebuggerPresent and press enter.
+
+* press f2
+
+![modification](https://user-images.githubusercontent.com/74544712/113626714-cc17b800-9662-11eb-872d-5f953da28651.png)
+
+#### step_3 
+
+* run the program and wait your program break on this op-code.
+* 
+* press some f8 until come back to your code.
+
+* looking up for something like TEST EAX,EAX and after some thing like je jnz and etc, beware the output of IsDebuggerPresent is saved in EAX.
+
+#### step_4 
+
+* if jump happen on this op-code change it to nop and if doesn't happen change it to jmp.
+
+* save your program. if you don't know how to save modifed code in x32dbg just search it.
+
 
 
 
