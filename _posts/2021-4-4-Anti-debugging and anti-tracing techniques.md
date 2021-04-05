@@ -63,7 +63,7 @@ if you want your application never check it do this:
  
 * press some ```f8``` until come back to your code.
 
-* looking up for something like``` TEST EAX,EAX ```and after some thing like je jnz and etc, beware the output of IsDebuggerPresent is saved in ```EAX```.
+* looking up for something like ``` TEST EAX,EAX ``` and after some thing like je jnz and etc, beware the output of IsDebuggerPresent is saved in ```EAX```.
 
 ![text2](https://user-images.githubusercontent.com/74544712/113631729-2c5e2800-966a-11eb-8179-cbbc512ef415.png)
 
@@ -75,7 +75,19 @@ if you want your application never check it do this:
 ![text3](https://user-images.githubusercontent.com/74544712/113631773-3c760780-966a-11eb-885e-792037610ac3.PNG)
 
 
-* save your program. if you don't know how to save modifed code in x32dbg just search it.
+* save your program. if you don't know how to save modifed code in ```x32dbg``` just search it.
+
+#### Reference
+
+* https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-isdebuggerpresent
+
+* https://stackoverflow.com/questions/10330147/how-do-i-bypass-isdebuggerpresent-with-ollydbg
+
+* https://www.aldeid.com/wiki/IsDebuggerPresent
+
+* Mastering Malware analysis 
+
+* practical Malware analysis  
 
 
 
