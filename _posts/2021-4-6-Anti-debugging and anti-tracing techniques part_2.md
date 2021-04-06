@@ -17,8 +17,7 @@ toc: true
 toc_label: Table of Contents
 toc_sticky: true
 ---
-## Introduction:-
-## Process-Environment-Block:- 
+## Process-Environment-Block
  * PEB is high level user mode structure that holds some important information about the current process under it is field values-some field being structures
  themselves to hold more data. it is the address of the PEB structure in the TEB.ProcessEnvrionmentBlock member.The TEB structure is located at the start address of the
  segment memory pointed by the Fs segment selector, and the ProcessEnvrionmentBlock member is 30 Offset from the start 
@@ -42,12 +41,13 @@ thread has it’s own TEB structure.
 
 * Thread Environment Block or the Process Environment Block have been used for malicious purposes in the past but Microsoft 
 has made a lot of changes over the recent years. in the past rootkits would inject a DLL into another running process. 
-## synetx:-
+## synetx
 * The PED structure id defined as follows:
 
 ![22596B3557A07D4826](https://user-images.githubusercontent.com/74544712/113758145-cded8400-9713-11eb-8895-4036255df003.png)
-## BeingDebugged:-
-## Description:-
+## BeingDebugged
+* This method is just another way to check BeingDebugged flag of PEB without calling IsDebuggerPresent().
+## Description
 
 * Instead of calling IsDebuggerPresent(), some packers manually check the PEB (Process Environment Block) for the BeingDebugged flag so when view PEB in WinDbg
 
@@ -65,7 +65,39 @@ kd> dt ntdll!_PEB
    +0x018 ProcessHeap      : Ptr32 Void
    [SNIP]
    ```
-   ## Return value
-   * If byte ptr [eax+2] returns 1, it means the the program is being debugged and the jump at offset 0x4010D8 won't be taken.
+## synetx
+### 32Bit Process
+```
+mov eax, fs:[30h]
+cmp byte ptr [eax+2], 0
+jne being_debugged
+
+```
+### 64Bit Process
+```
+mov rax, gs:[60h]
+cmp byte ptr [rax+2], 0
+jne being_debugged
+
+```
+### WOW64 Process
+```
+mov eax, fs:[30h]
+cmp byte ptr [eax+1002h], 0
+
+```
+### C/C++ Code
+```
+#ifndef _WIN64
+PPEB pPeb = (PPEB)__readfsdword(0x30);
+#else
+PPEB pPeb = (PPEB)__readgsqword(0x60);
+#endif // _WIN64
+ 
+if (pPeb->BeingDebugged)
+    goto being_debugged;
+```
+## Return value
+* If byte ptr [eax+2] returns 1, it means the the program is being debugged and the jump at offset 0x4010D8 won't be taken.
    ![Anti-reverse-debugger-detection-peb-beingdebugged](https://user-images.githubusercontent.com/74544712/113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44.png)
 
