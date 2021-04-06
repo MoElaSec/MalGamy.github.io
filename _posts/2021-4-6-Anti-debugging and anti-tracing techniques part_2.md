@@ -17,8 +17,8 @@ toc: true
 toc_label: Table of Contents
 toc_sticky: true
 ---
-## Introduction
-### Process-Environment-Block: 
+## Introduction:-
+## Process-Environment-Block:- 
  * PEB is high level user mode structure that holds some important information about the current process under it is field values-some field being structures
  themselves to hold more data. it is the address of the PEB structure in the TEB.ProcessEnvrionmentBlock member.The TEB structure is located at the start address of the
  segment memory pointed by the Fs segment selector, and the ProcessEnvrionmentBlock member is 30 Offset from the start 
@@ -42,13 +42,15 @@ thread has it’s own TEB structure.
 
 * Thread Environment Block or the Process Environment Block have been used for malicious purposes in the past but Microsoft 
 has made a lot of changes over the recent years. in the past rootkits would inject a DLL into another running process. 
-### synetx
+### synetx:-
 * The PED structure id defined as follows:
 
 ![22596B3557A07D4826](https://user-images.githubusercontent.com/74544712/113758145-cded8400-9713-11eb-8895-4036255df003.png)
-## BeingDebugged:
-#### Description 
+## BeingDebugged:-
+### Description:-
+
 * Instead of calling IsDebuggerPresent(), some packers manually check the PEB (Process Environment Block) for the BeingDebugged flag so when view PEB in WinDbg
+
 ```
 kd> dt ntdll!_PEB
    +0x000 InheritedAddressSpace : UChar
@@ -63,3 +65,7 @@ kd> dt ntdll!_PEB
    +0x018 ProcessHeap      : Ptr32 Void
    [SNIP]
    ```
+   ### Return value:-
+   * If byte ptr [eax+2] returns 1, it means the the program is being debugged and the jump at offset 0x4010D8 won't be taken.
+   ![Anti-reverse-debugger-detection-peb-beingdebugged](https://user-images.githubusercontent.com/74544712/113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44.png)
+
