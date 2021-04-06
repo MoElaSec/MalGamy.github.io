@@ -53,9 +53,7 @@ has made a lot of changes over the recent years. in the past rootkits would inje
 kd> dt ntdll!_PEB
    +0x000 InheritedAddressSpace : UChar
    +0x001 ReadImageFileExecOptions : UChar
-   ```
-   +0x002 BeingDebugged    : UChar   ---> Indicates whether the specified process is currently being debugged.
-   ```
+   +0x002 BeingDebugged    : UChar   ---> Indicates whether the specified process is currently being debugged
    +0x003 SpareBool        : UChar
    +0x004 Mutant           : Ptr32 Void
    +0x008 ImageBaseAddress : Ptr32 Void
