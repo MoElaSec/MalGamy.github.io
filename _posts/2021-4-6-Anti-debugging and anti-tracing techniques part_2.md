@@ -42,8 +42,26 @@ thread has it’s own TEB structure.
 
 * Thread Environment Block or the Process Environment Block have been used for malicious purposes in the past but Microsoft 
 has made a lot of changes over the recent years. in the past rootkits would inject a DLL into another running process. 
-## synetx
+### synetx
 * The PED structure id defined as follows:
 
 ![22596B3557A07D4826](https://user-images.githubusercontent.com/74544712/113758145-cded8400-9713-11eb-8895-4036255df003.png)
-
+## BeingDebugged:
+#### Description 
+* Instead of calling IsDebuggerPresent(), some packers manually check the PEB (Process Environment Block) for the BeingDebugged flag so when view PEB in WinDbg
+```
+kd> dt ntdll!_PEB
+   +0x000 InheritedAddressSpace : UChar
+   +0x001 ReadImageFileExecOptions : UChar
+   ```
+   +0x002 BeingDebugged    : UChar   ---> Indicates whether the specified process is currently being debugged.
+   ```
+   +0x003 SpareBool        : UChar
+   +0x004 Mutant           : Ptr32 Void
+   +0x008 ImageBaseAddress : Ptr32 Void
+   +0x00c Ldr              : Ptr32 _PEB_LDR_DATA
+   +0x010 ProcessParameters : Ptr32 _RTL_USER_PROCESS_PARAMETERS
+   +0x014 SubSystemData    : Ptr32 Void
+   +0x018 ProcessHeap      : Ptr32 Void
+   [SNIP]
+   ```
