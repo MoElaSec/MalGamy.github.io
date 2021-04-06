@@ -18,7 +18,7 @@ toc_label: Table of Contents
 toc_sticky: true
 ---
 ## Introduction
-PEB : 
+### Process-Environment-Block: 
  * PEB is high level user mode structure that holds some important information about the current process under it is field values-some field being structures
  themselves to hold more data. it is the address of the PEB structure in the TEB.ProcessEnvrionmentBlock member.The TEB structure is located at the start address of the
  segment memory pointed by the Fs segment selector, and the ProcessEnvrionmentBlock member is 30 Offset from the start 
@@ -42,4 +42,7 @@ thread has it’s own TEB structure.
 
 * Thread Environment Block or the Process Environment Block have been used for malicious purposes in the past but Microsoft 
 has made a lot of changes over the recent years. in the past rootkits would inject a DLL into another running process. 
-## synetx 
+## synetx
+* The PED structure id defined as follows:
+![22596B3557A07D4826](https://user-images.githubusercontent.com/74544712/113758145-cded8400-9713-11eb-8895-4036255df003.png)
+
