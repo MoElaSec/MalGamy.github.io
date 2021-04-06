@@ -44,5 +44,6 @@ thread has it’s own TEB structure.
 has made a lot of changes over the recent years. in the past rootkits would inject a DLL into another running process. 
 ## synetx
 * The PED structure id defined as follows:
+
 ![22596B3557A07D4826](https://user-images.githubusercontent.com/74544712/113758145-cded8400-9713-11eb-8895-4036255df003.png)
 
