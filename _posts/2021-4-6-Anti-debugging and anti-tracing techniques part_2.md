@@ -18,7 +18,7 @@ toc_label: Table of Contents
 toc_sticky: true
 ---
 
-![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
+
 
 
 
@@ -28,6 +28,7 @@ toc_sticky: true
  themselves to hold more data. it is the address of the PEB structure in the TEB.ProcessEnvrionmentBlock member.The TEB structure is located at the start address of the
  segment memory pointed by the Fs segment selector, and the ProcessEnvrionmentBlock member is 30 Offset from the start 
  of TEB structure.
+ ![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
  ```
 mov   eax , dword ptr fs:[18h]     ----> get address of TEB structure
 mov   eax , dword ptr ds:[eax+30h] ----> get address of PEB structure
