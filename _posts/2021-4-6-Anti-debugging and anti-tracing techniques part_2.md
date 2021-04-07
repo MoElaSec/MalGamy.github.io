@@ -25,7 +25,8 @@ we encounter code that goes straight to exiting the program or jumps into code t
 make sense.
 
 <!-- more -->
-[![name](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)]
+
+[![anti-debugging](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)](https://malgamy.github.io/Anti-debugging-and-anti-tracing-techniques-part_2/)
 
 
 ## Process-Environment-Block
