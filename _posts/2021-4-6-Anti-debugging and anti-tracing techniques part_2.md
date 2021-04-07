@@ -19,7 +19,7 @@ toc_sticky: true
 image: assets/images/Posts/cover.png
 ---
 <br>
-{% assign img_root = "{% assign img_root = "assets/images/Posts" %}" %}
+{% assign img_root = "{% assign img_root = "assets/images/Posts" %} 
 <br>
 * ---> Anti-debugging tricks are meant to ensure that the codes are not working under the
 influence of a debugger. Say we have a program with an anti-debugging code in it. The
