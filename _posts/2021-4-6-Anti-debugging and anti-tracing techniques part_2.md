@@ -26,7 +26,7 @@ make sense.
 
 <!-- more -->
 
-![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
+![](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
 
 ## Process-Environment-Block
  * PEB is high level user mode structure that holds some important information about the current process under it is field values-some field being structures
