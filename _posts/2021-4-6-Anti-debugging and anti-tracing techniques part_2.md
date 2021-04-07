@@ -123,6 +123,6 @@ if (pPeb->BeingDebugged)
 ## References 
 * parctical malware analysis. 
 * Mastering reverse engineering.
-* https://www.aldeid.com/wiki/PEB-Process-Environment-Block/BeingDebugged. 
-* https://docs.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-peb.
-* https://reverseengineering.stackexchange.com/questions/19178/automating-bypassing-anti-debug-checks.
+* https://www.aldeid.com/wiki/PEB-Process-Environment-Block/BeingDebugged
+* https://docs.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-peb
+* https://reverseengineering.stackexchange.com/questions/19178/automating-bypassing-anti-debug-checks
