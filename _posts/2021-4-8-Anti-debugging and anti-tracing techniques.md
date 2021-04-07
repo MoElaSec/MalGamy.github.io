@@ -19,17 +19,15 @@ toc_sticky: true
 ---
 # introducation 
 
-* Malicious Software is able to detect if it is running under debugging environment because all debuggers have been attached to the process and it hides
-the malicious behavoir to avoid detection from malware analyst if he attempting to debug the process.in this part i will describe common anti-debugging
-techniques which are used to detect the presence of a debugger.
+Malicious Software is able to detect if it is running under debugging environment because all debuggers have been attached to the process and it hidesthe malicious behavoir to avoid detection from malware analyst if he attempting to debug the process.in this part i will describe common anti-debugging techniques which are used to detect the presence of a debugger.
 
 # NtGlobalFlag 
 ## Description 
-* The NtGlobalFlag field of the Process Environment Block (0x68 offset on 32-Bit and 0xBC on 64-bit Windows) is 0 by default. Attaching a debugger doesn’t change the value of NtGlobalFlag. However, if the process was created by a debugger, the following flags will be set:
+The NtGlobalFlag field of the Process Environment Block (0x68 offset on 32-Bit and 0xBC on 64-bit Windows) is 0 by default. Attaching a debugger doesn’t change the value of NtGlobalFlag. However, if the process was created by a debugger, the following flags will be set:
 
-** FLG_HEAP_ENABLE_TAIL_CHECK    ---> (0x10)
-** FLG_HEAP_ENABLE_FREE_CHECK    ---> (0x20)
-** FLG_HEAP_VALIDATE_PARAMETERS  ---> (0x40)
+* FLG_HEAP_ENABLE_TAIL_CHECK    ---> (0x10)
+* FLG_HEAP_ENABLE_FREE_CHECK    ---> (0x20)
+* FLG_HEAP_VALIDATE_PARAMETERS  ---> (0x40)
 
 The presence of a debugger can be detected by checking a combination of those flags.
 ## Example
@@ -82,7 +80,7 @@ DWORD dwNtGlobalFlag = *(PDWORD)((PBYTE)pPeb + 0xBC);
 if (dwNtGlobalFlag & NT_GLOBAL_FLAG_DEBUGGED)
     goto being_debugged;
 ```
-  
+
 		
 		
 
