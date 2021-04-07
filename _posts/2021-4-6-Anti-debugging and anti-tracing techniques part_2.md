@@ -16,9 +16,9 @@ date: '2021-4-7 10-00-00 +0000'
 toc: true
 toc_label: Table of Contents
 toc_sticky: true
-image: ![](https://user-images.githubusercontent.com/74544712/113829183-7ab41980-9785-11eb-98a8-10a14df15fa9.png)
+
 ---
-{% assign img_root = "https://user-images.githubusercontent.com/74544712/113829183-7ab41980-9785-11eb-98a8-10a14df15fa9.png" %}
+
 ---> Anti-debugging tricks are meant to ensure that the codes are not working under the
 influence of a debugger. Say we have a program with an anti-debugging code in it. The
 behavior of the program is just as if it were running without an anti-debugging code. The
@@ -28,7 +28,7 @@ make sense.
 
 <!-- more -->
 
-![](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
+![600px-cover-example](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
 
 
 ## Process-Environment-Block
