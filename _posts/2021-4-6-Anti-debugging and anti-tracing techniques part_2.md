@@ -18,9 +18,9 @@ toc_label: Table of Contents
 toc_sticky: true
 ---
 
+![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
 
-
-
+<!-- more -->
 
 
 ## Process-Environment-Block
@@ -28,11 +28,6 @@ toc_sticky: true
  themselves to hold more data. it is the address of the PEB structure in the TEB.ProcessEnvrionmentBlock member.The TEB structure is located at the start address of the
  segment memory pointed by the Fs segment selector, and the ProcessEnvrionmentBlock member is 30 Offset from the start 
  of TEB structure.
- ![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
-
-
- * Every process has it is own PEB and the the Windows Kernel will also have access to the PEB of every user-mode process so it can keep track of certain
- data stored within it. so The Process Environment Block (PEB) is an important thing.
  
 ```
 mov   eax , dword ptr fs:[18h]     ----> get address of TEB structure
@@ -41,6 +36,11 @@ movzx eax , byte ptr ds: [eax+2]   ----> get value of PEB.BeingDebugged
 test  eax , eax                    ----> if not zero, a Debugger has been detected
 jne   debugger_detected
  ```
+
+ * Every process has it is own PEB and the the Windows Kernel will also have access to the PEB of every user-mode process so it can keep track of certain
+ data stored within it. so The Process Environment Block (PEB) is an important thing.
+ 
+
 
 * The PEB structure comes form Windows Kernel although is accessible in user-mode. The PEB comes form the Thead Environment Block (TEB) which also
 happens to be commonly referred to as the Thread Information Block (TIB). The TEB is responsible for holding data about the current thread – every
