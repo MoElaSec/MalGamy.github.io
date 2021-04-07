@@ -17,7 +17,8 @@ toc: true
 toc_label: Table of Contents
 toc_sticky: true
 ---
-![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113814441-f310df80-9771-11eb-9b1a-dfb8125e8f89.png)
+[![Anti-debugging and anti-tracing techniques part_2](![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113814441-f310df80-9771-11eb-9b1a-dfb8125e8f89.png))](https://malgamy.github.io/Anti-debugging-and-anti-tracing-techniques-part_2/)
+
 
 
 ## Process-Environment-Block
