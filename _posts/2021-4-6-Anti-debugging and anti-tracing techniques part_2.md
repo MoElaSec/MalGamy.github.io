@@ -17,7 +17,7 @@ toc: true
 toc_label: Table of Contents
 toc_sticky: true
 ---
-![22596B3557A07D4826](https://user-images.githubusercontent.com/74544712/113814506-0f148100-9772-11eb-8ec0-e268e4dd9d83.png)
+![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113814441-f310df80-9771-11eb-9b1a-dfb8125e8f89.png)
 
 
 ## Process-Environment-Block
@@ -102,7 +102,7 @@ if (pPeb->BeingDebugged)
 ```
 ## Return value
 * If byte ptr [eax+2] returns 1, it means the the program is being debugged and the jump at offset 0x4010D8 won't be taken.
-   ![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113814441-f310df80-9771-11eb-9b1a-dfb8125e8f89.png)
+   
 
 ## Bypass BeingDebugged Chek
 ### stage(1)
