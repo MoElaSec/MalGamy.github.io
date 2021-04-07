@@ -17,71 +17,74 @@ toc: true
 toc_label: Table of Contents
 toc_sticky: true
 ---
-## introducation 
+# introducation 
 
 * Malicious Software is able to detect if it is running under debugging environment because all debuggers have been attached to the process and it hides
 the malicious behavoir to avoid detection from malware analyst if he attempting to debug the process.in this part i will describe common anti-debugging
 techniques which are used to detect the presence of a debugger.
 
-## NtGlobalFlag 
+# NtGlobalFlag 
+## Description 
+* The NtGlobalFlag field of the Process Environment Block (0x68 offset on 32-Bit and 0xBC on 64-bit Windows) is 0 by default. Attaching a debugger doesn’t change the value of NtGlobalFlag. However, if the process was created by a debugger, the following flags will be set:
 
-*  NtGlobalFlag is a DWORD value inside the process PEB. This value contains many flags set by the OS that affects the way the process
-	runs. When a process is being debugged, the flags:
-  
-		** FLG_HEAP_ENABLE_TAIL_CHECK (0x10)
-		
-		** FLG_HEAP_ENABLE_FREE_CHECK (0x20)
-    
-		** FLG_HEAP_VALIDATE_PARAMETERS(0x40) are set for the process
-    
-* If the 32-bit executable is being run on a 64-bit system, both the
-	32-bit and 64-bit PEBs are checked. The WoW64 PEB address is 
-	fetched via the WoW64 Thread Environment Block (TEB) at FS:[0x18]-0x2000.
-** Arguments:
-	*** None
-** Return Value:
-	** TRUE - if debugger was detected
-	** FALSE - otherwise
-  
-  ```
-  #include "pch.h"
-#include "NtGlobalFlag.h"
+** FLG_HEAP_ENABLE_TAIL_CHECK    ---> (0x10)
+** FLG_HEAP_ENABLE_FREE_CHECK    ---> (0x20)
+** FLG_HEAP_VALIDATE_PARAMETERS  ---> (0x40)
 
+The presence of a debugger can be detected by checking a combination of those flags.
+## Example
 
-BOOL
-NtGlobalFlag (
-	VOID
-	)
+![Anti-reverse-anti-debug-peb-ntglobalflag](https://user-images.githubusercontent.com/74544712/113925597-80dce100-97eb-11eb-9440-3d033b159cdd.png)
 
-{
-	PDWORD pNtGlobalFlag = NULL, pNtGlobalFlagWoW64 = NULL;
+### 32Bit Process
 
-#if defined (ENV64BIT)
-	pNtGlobalFlag = (PDWORD)(__readgsqword(0x60) + 0xBC);
-
-#elif defined(ENV32BIT)
-	/* NtGlobalFlags for real 32-bits OS */
-	BYTE* _teb32 = (BYTE*)__readfsdword(0x18);
-	DWORD _peb32 = *(DWORD*)(_teb32 + 0x30);
-	pNtGlobalFlag = (PDWORD)(_peb32 + 0x68);
-
-	if (IsWoW64())
-	{
-		/* In Wow64, there is a separate PEB for the 32-bit portion and the 64-bit portion
-		which we can double-check */
-		
-		BYTE* _teb64 = (BYTE*)__readfsdword(0x18) - 0x2000;
-		DWORD64 _peb64 = *(DWORD64*)(_teb64 + 0x60);
-		pNtGlobalFlagWoW64 = (PDWORD)(_peb64 + 0xBC);
-	}
-#endif
-
-	BOOL normalDetected = pNtGlobalFlag && *pNtGlobalFlag & 0x00000070;
-	BOOL wow64Detected = pNtGlobalFlagWoW64 && *pNtGlobalFlagWoW64 & 0x00000070;
-	
-	if(normalDetected || wow64Detected)
-		return TRUE;
-	else
-		return FALSE;
-}
 ```
+mov eax, fs:[30h]
+mov al, [eax+68h]
+and al, 70h
+cmp al, 70h
+jz  being_debugged
+```
+### 64Bit Process
+
+```
+mov rax, gs:[60h]
+mov al, [rax+BCh]
+and al, 70h
+cmp al, 70h
+jz  being_debugged
+```
+### WOW64 Process
+
+```
+mov eax, fs:[30h]
+mov al, [eax+10BCh]
+and al, 70h
+cmp al, 70h
+jz  being_debugged
+```
+### C/C++ Code
+
+```
+#define FLG_HEAP_ENABLE_TAIL_CHECK   0x10
+#define FLG_HEAP_ENABLE_FREE_CHECK   0x20
+#define FLG_HEAP_VALIDATE_PARAMETERS 0x40
+#define NT_GLOBAL_FLAG_DEBUGGED (FLG_HEAP_ENABLE_TAIL_CHECK | FLG_HEAP_ENABLE_FREE_CHECK | FLG_HEAP_VALIDATE_PARAMETERS)
+
+#ifndef _WIN64
+PPEB pPeb = (PPEB)__readfsdword(0x30);
+DWORD dwNtGlobalFlag = *(PDWORD)((PBYTE)pPeb + 0x68);
+#else
+PPEB pPeb = (PPEB)__readgsqword(0x60);
+DWORD dwNtGlobalFlag = *(PDWORD)((PBYTE)pPeb + 0xBC);
+#endif // _WIN64
+ 
+if (dwNtGlobalFlag & NT_GLOBAL_FLAG_DEBUGGED)
+    goto being_debugged;
+```
+  
+		
+		
+
+
+ 
