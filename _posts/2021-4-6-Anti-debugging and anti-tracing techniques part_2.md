@@ -16,9 +16,9 @@ date: '2021-4-7 10-00-00 +0000'
 toc: true
 toc_label: Table of Contents
 toc_sticky: true
-image: ![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113829183-7ab41980-9785-11eb-98a8-10a14df15fa9.png)
-
+image: ![](https://user-images.githubusercontent.com/74544712/113829183-7ab41980-9785-11eb-98a8-10a14df15fa9.png)
 ---
+{% assign img_root = "https://user-images.githubusercontent.com/74544712/113829183-7ab41980-9785-11eb-98a8-10a14df15fa9.png" %}
 ---> Anti-debugging tricks are meant to ensure that the codes are not working under the
 influence of a debugger. Say we have a program with an anti-debugging code in it. The
 behavior of the program is just as if it were running without an anti-debugging code. The
