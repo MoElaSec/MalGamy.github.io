@@ -30,7 +30,7 @@ Malicious software can detect that it is running in a debugger because all debug
 * FLG_HEAP_ENABLE_FREE_CHECK    ---> (0x20)
 * FLG_HEAP_VALIDATE_PARAMETERS  ---> (0x40)
 
-A combination of those flags may be used to detect the existence of a debugger.
+* A combination of those flags may be used to detect the existence of a debugger.
 ## Example
 
 ![Anti-reverse-anti-debug-peb-ntglobalflag](https://user-images.githubusercontent.com/74544712/113925597-80dce100-97eb-11eb-9440-3d033b159cdd.png)
