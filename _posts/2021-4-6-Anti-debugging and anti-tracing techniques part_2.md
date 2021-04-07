@@ -121,9 +121,8 @@ if (pPeb->BeingDebugged)
 ![stage3](https://user-images.githubusercontent.com/74544712/113818742-85b47d00-9778-11eb-8e92-31bf8a93b392.PNG)
 
 ## References 
-
-* https://www.aldeid.com/wiki/PEB-Process-Environment-Block/BeingDebugged
-* parctical malware analysis 
-* Mastering reverse engineering 
-* https://docs.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-peb
-* https://reverseengineering.stackexchange.com/questions/19178/automating-bypassing-anti-debug-checks
+* parctical malware analysis. 
+* Mastering reverse engineering.
+* https://www.aldeid.com/wiki/PEB-Process-Environment-Block/BeingDebugged. 
+* https://docs.microsoft.com/en-us/windows/win32/api/winternl/ns-winternl-peb.
+* https://reverseengineering.stackexchange.com/questions/19178/automating-bypassing-anti-debug-checks.
