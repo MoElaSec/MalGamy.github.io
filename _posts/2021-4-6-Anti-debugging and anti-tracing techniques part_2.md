@@ -16,9 +16,7 @@ date: '2021-4-7 10-00-00 +0000'
 toc: true
 toc_label: Table of Contents
 toc_sticky: true
-
 ---
-
 ---> Anti-debugging tricks are meant to ensure that the codes are not working under the
 influence of a debugger. Say we have a program with an anti-debugging code in it. The
 behavior of the program is just as if it were running without an anti-debugging code. The
@@ -27,9 +25,7 @@ we encounter code that goes straight to exiting the program or jumps into code t
 make sense.
 
 <!-- more -->
-
 ![600px-cover-example](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
-
 
 ## Process-Environment-Block
  * PEB is high level user mode structure that holds some important information about the current process under it is field values-some field being structures
