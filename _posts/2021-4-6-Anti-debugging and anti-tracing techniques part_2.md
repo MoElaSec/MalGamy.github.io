@@ -17,11 +17,16 @@ toc: true
 toc_label: Table of Contents
 toc_sticky: true
 ---
-
-![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
+---> Anti-debugging tricks are meant to ensure that the codes are not working under the
+influence of a debugger. Say we have a program with an anti-debugging code in it. The
+behavior of the program is just as if it were running without an anti-debugging code. The
+story becomes different, however, when the program is being debugged. While debugging,
+we encounter code that goes straight to exiting the program or jumps into code that doesn't
+make sense.
 
 <!-- more -->
 
+![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
 
 ## Process-Environment-Block
  * PEB is high level user mode structure that holds some important information about the current process under it is field values-some field being structures
