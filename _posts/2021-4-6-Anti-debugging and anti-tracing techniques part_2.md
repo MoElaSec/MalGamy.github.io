@@ -57,7 +57,7 @@ thread has it’s own TEB structure.
 * Thread Environment Block or the Process Environment Block have been used for malicious purposes in the past but Microsoft 
 has made a lot of changes over the recent years. in the past rootkits would inject a DLL into another running process. 
 
-## synetx 
+## Syntax 
  * The PED structure is defined as follows:
 
 ![22596B3557A07D4826](https://user-images.githubusercontent.com/74544712/113814506-0f148100-9772-11eb-8ec0-e268e4dd9d83.png)
@@ -82,7 +82,7 @@ kd> dt ntdll!_PEB
    +0x018 ProcessHeap      : Ptr32 Void
    [SNIP]
    ```
-## synetx
+## Syntax
 ### 32Bit Process
 ```
 mov eax, fs:[30h]
