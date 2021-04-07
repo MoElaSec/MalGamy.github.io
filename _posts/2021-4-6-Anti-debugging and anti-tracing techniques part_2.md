@@ -12,7 +12,7 @@ tags:
 - anit-tracing
 categories:
 - Articles
-date: '2021-4-4 11-00-00 +0000'
+date: '2021-4-7 10-00-00 +0000'
 toc: true
 toc_label: Table of Contents
 toc_sticky: true
@@ -26,7 +26,7 @@ make sense.
 
 <!-- more -->
 
-[![anti-debugging](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)](https://malgamy.github.io/Anti-debugging-and-anti-tracing-techniques-part_2/)
+![](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
 
 
 ## Process-Environment-Block
