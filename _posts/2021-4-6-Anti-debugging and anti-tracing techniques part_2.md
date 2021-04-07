@@ -16,9 +16,7 @@ date: '2021-4-7 10-00-00 +0000'
 toc: true
 toc_label: Table of Contents
 toc_sticky: true
-image: assets/images/Posts/cover.png
 ---
-{% assign img_root = "{% assign img_root = "assets/images/Posts" %} 
 
 ---> Anti-debugging tricks are meant to ensure that the codes are not working under the
 influence of a debugger. Say we have a program with an anti-debugging code in it. The
