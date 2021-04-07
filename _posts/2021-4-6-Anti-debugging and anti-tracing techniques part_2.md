@@ -17,6 +17,8 @@ toc: true
 toc_label: Table of Contents
 toc_sticky: true
 ---
+![NJXXXQBO_400x400](https://user-images.githubusercontent.com/74544712/113820970-bc3fc700-977b-11eb-8d96-6c683a81327a.jpg)
+
 ## Process-Environment-Block
  * PEB is high level user mode structure that holds some important information about the current process under it is field values-some field being structures
  themselves to hold more data. it is the address of the PEB structure in the TEB.ProcessEnvrionmentBlock member.The TEB structure is located at the start address of the
