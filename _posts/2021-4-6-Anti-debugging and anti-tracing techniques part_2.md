@@ -25,8 +25,8 @@ we encounter code that goes straight to exiting the program or jumps into code t
 make sense.
 
 <!-- more -->
+[![name](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)]
 
-![](https://user-images.githubusercontent.com/74544712/113822522-d084c380-977d-11eb-8736-8614c55f27a2.png)
 
 ## Process-Environment-Block
  * PEB is high level user mode structure that holds some important information about the current process under it is field values-some field being structures
