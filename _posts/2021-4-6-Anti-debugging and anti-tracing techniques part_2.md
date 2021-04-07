@@ -45,7 +45,8 @@ has made a lot of changes over the recent years. in the past rootkits would inje
 ## synetx 
  * The PED structure id defined as follows:
 
-![22596B3557A07D4826](https://user-images.githubusercontent.com/74544712/113758145-cded8400-9713-11eb-8895-4036255df003.png)
+![22596B3557A07D4826](https://user-images.githubusercontent.com/74544712/113814506-0f148100-9772-11eb-8ec0-e268e4dd9d83.png)
+
 ## BeingDebugged
 * This method is just another way to check BeingDebugged flag of PEB without calling IsDebuggerPresent().
 ## Description
@@ -98,5 +99,25 @@ if (pPeb->BeingDebugged)
 ```
 ## Return value
 * If byte ptr [eax+2] returns 1, it means the the program is being debugged and the jump at offset 0x4010D8 won't be taken.
-   ![Anti-reverse-debugger-detection-peb-beingdebugged](https://user-images.githubusercontent.com/74544712/113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44.png)
+   ![113761364-a7c9e300-9717-11eb-97ea-50f36ece6b44](https://user-images.githubusercontent.com/74544712/113814441-f310df80-9771-11eb-9b1a-dfb8125e8f89.png)
+
+## Bypass BeingDebugged Chek
+### stage(1)
+* let's open the samples in x32dbg and breakpoint in 763E38F0.
+
+![breakpoint](https://user-images.githubusercontent.com/74544712/113815852-23f21400-9774-11eb-99b0-c3367b0a1c01.PNG)
+
+### stage(2)
+* The PEB structure has been loaded into the EAX register.
+
+* I will follow the value of eax in the dump.
+
+![Stage2](https://user-images.githubusercontent.com/74544712/113817407-906e1280-9776-11eb-90e9-9a9f3b0eca85.PNG)
+
+### stage(3)
+* we see that offset 0x2 in the PEB structure, the value is 0x1. It corresponds to the BeingDebugged flag
+.
+* Right click on it and select ```Binary``` > ```Fill with 00's```
+![stage3](https://user-images.githubusercontent.com/74544712/113818742-85b47d00-9778-11eb-8e92-31bf8a93b392.PNG)
+
 
