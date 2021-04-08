@@ -17,7 +17,7 @@ toc: true
 toc_label: Table of Contents
 toc_sticky: true
 ---
-# introducation 
+# Introducation 
 
 Malicious software can detect that it is running in a debugger because all debuggers have been added to the operation, and it masks the malicious behaviour to avoid detection by malware analysts trying to debug it. In this section, I'll go through some popular anti-debugging techniques for detecting the existence of a debugger.
 
@@ -81,27 +81,27 @@ DWORD dwNtGlobalFlag = *(PDWORD)((PBYTE)pPeb + 0xBC);
 if (dwNtGlobalFlag & NT_GLOBAL_FLAG_DEBUGGED)
     goto being_debugged;
 ```
-## bypass NtGlobalFlag
-### stage(1)
+## Bypass NtGlobalFlag
+### Stage(1)
  * When I debug this app I face NtGlobalFlag technique, let us bypass it.
 
 ![ntGolbalflag](https://user-images.githubusercontent.com/74544712/113995768-d4384900-9856-11eb-87d1-38b6f0f85ea4.PNG)
 
-### stage(2)
+### Stage(2)
  * the app loads the PEB struct into EAX ---> ```mov eax, large fs:30h```
 
  * I will follow the value of eax in dump to see the PED sturct
  
  ![ntGolbalflag2](https://user-images.githubusercontent.com/74544712/113996306-558fdb80-9857-11eb-82d6-42d83876c04b.PNG)
 
-### stage(3)
+### Stage(3)
 * I will see the value of combination of flags ---> ```mov eax, [eax+68h]```
 
 * we notice that the value is 0x70 and this means the process is being debugged
 
 ![ntGolbalflag3](https://user-images.githubusercontent.com/74544712/113997023-0ac29380-9858-11eb-8412-e23c54e9518e.PNG)
 
-### stage(4)
+### Stage(4)
 
 * To bypass this technique must change the value from ```0x70``` to ```0x00```
 
@@ -109,11 +109,12 @@ if (dwNtGlobalFlag & NT_GLOBAL_FLAG_DEBUGGED)
 
 ![ntGolbalflag4](https://user-images.githubusercontent.com/74544712/113997665-a5bb6d80-9858-11eb-8e64-c2e2efa5e83b.PNG)
 
-### stage(5)
+### Stage(5)
 * Nice, the app does not execute the call that terminates the process.
 * 
  ![ntGolbalflag5](https://user-images.githubusercontent.com/74544712/113998000-ed41f980-9858-11eb-98a7-8c6245bdfd85.PNG)
-## reference 
+ 
+## References
 * parctical malware analysis 
 * Mastering malware analysis 
 * https://www.aldeid.com/wiki/PEB-Process-Environment-Block/NtGlobalFlag
