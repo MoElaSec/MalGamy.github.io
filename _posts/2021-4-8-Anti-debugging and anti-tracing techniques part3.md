@@ -83,7 +83,7 @@ if (dwNtGlobalFlag & NT_GLOBAL_FLAG_DEBUGGED)
 ```
 ## bypass NtGlobalFlag
 ### stage(1)
- * when i debuge this app i face NtGlobalFlag technique, let us bypass it.
+ * When I debug this app I face NtGlobalFlag technique, let us bypass it.
 
 ![ntGolbalflag](https://user-images.githubusercontent.com/74544712/113995768-d4384900-9856-11eb-87d1-38b6f0f85ea4.PNG)
 
@@ -103,17 +103,23 @@ if (dwNtGlobalFlag & NT_GLOBAL_FLAG_DEBUGGED)
 
 ### stage(4)
 
-* to bypass this technique must change the value from ```0x70``` to ```0x00```
-  
-* click right on value in dump select ```modifiy``` and change the value to ```0x00```
+* To bypass this technique must change the value from ```0x70``` to ```0x00```
+
+* click right on value in dump, select ```modify``` and change the value to ```0x00```
 
 ![ntGolbalflag4](https://user-images.githubusercontent.com/74544712/113997665-a5bb6d80-9858-11eb-8e64-c2e2efa5e83b.PNG)
 
 ### stage(5)
-* nice , app do not execute the call that terminate the process.
-
+* Nice, the app does not execute the call that terminates the process.
+* 
  ![ntGolbalflag5](https://user-images.githubusercontent.com/74544712/113998000-ed41f980-9858-11eb-98a7-8c6245bdfd85.PNG)
 ## reference 
+* parctical malware analysis 
+* Mastering malware analysis 
+* https://www.aldeid.com/wiki/PEB-Process-Environment-Block/NtGlobalFlag
+* https://wiki.x10sec.org/reverse/windows/anti-debug/ntglobalflag/
+* https://osandamalith.com/2016/04/23/debugger-detection-using-ntglobalflag/
+* https://www.astesj.com/publications/ASTESJ_0506142.pdf
   
 		
 		
