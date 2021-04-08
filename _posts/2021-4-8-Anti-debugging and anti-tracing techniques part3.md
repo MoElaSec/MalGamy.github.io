@@ -81,7 +81,40 @@ DWORD dwNtGlobalFlag = *(PDWORD)((PBYTE)pPeb + 0xBC);
 if (dwNtGlobalFlag & NT_GLOBAL_FLAG_DEBUGGED)
     goto being_debugged;
 ```
+## bypass NtGlobalFlag
+### stage(1)
+ * when i debuge this app i face NtGlobalFlag technique, let us bypass it.
 
+![ntGolbalflag](https://user-images.githubusercontent.com/74544712/113995768-d4384900-9856-11eb-87d1-38b6f0f85ea4.PNG)
+
+### stage(2)
+ * the app loads the PEB struct into EAX ---> ```mov eax, large fs:30h```
+
+ * I will follow the value of eax in dump to see the PED sturct
+ 
+ ![ntGolbalflag2](https://user-images.githubusercontent.com/74544712/113996306-558fdb80-9857-11eb-82d6-42d83876c04b.PNG)
+
+### stage(3)
+* I will see the value of combination of flags ---> ```mov eax, [eax+68h]```
+
+* we notice that the value is 0x70 and this means the process is being debugged
+
+![ntGolbalflag3](https://user-images.githubusercontent.com/74544712/113997023-0ac29380-9858-11eb-8412-e23c54e9518e.PNG)
+
+### stage(4)
+
+* to bypass this technique must change the value from ```0x70``` to ```0x00```
+  
+* click right on value in dump select ```modifiy``` and change the value to ```0x00```
+
+![ntGolbalflag4](https://user-images.githubusercontent.com/74544712/113997665-a5bb6d80-9858-11eb-8e64-c2e2efa5e83b.PNG)
+
+### stage(5)
+* nice , app do not execute the call that terminate the process.
+
+ ![ntGolbalflag5](https://user-images.githubusercontent.com/74544712/113998000-ed41f980-9858-11eb-98a7-8c6245bdfd85.PNG)
+## reference 
+  
 		
 		
 
