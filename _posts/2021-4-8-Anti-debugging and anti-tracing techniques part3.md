@@ -111,8 +111,8 @@ if (dwNtGlobalFlag & NT_GLOBAL_FLAG_DEBUGGED)
 
 ### Stage(5)
 * Nice, the app does not execute the call that terminates the process.
-* 
- ![ntGolbalflag5](https://user-images.githubusercontent.com/74544712/113998000-ed41f980-9858-11eb-98a7-8c6245bdfd85.PNG)
+ 
+![ntGolbalflag5](https://user-images.githubusercontent.com/74544712/113998000-ed41f980-9858-11eb-98a7-8c6245bdfd85.PNG)
  
 ## References
 * parctical malware analysis 
