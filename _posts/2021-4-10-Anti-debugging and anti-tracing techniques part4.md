@@ -100,6 +100,7 @@ being_debugged:
 
 * press ```f7``` to enter in this funtion and bypass the trick.
 * When i press ```F8``` in function to bypass the trick , i find this function NtQueryInformationProcess() which retrieves information about the specified process.
+
  ![Capture](https://user-images.githubusercontent.com/74544712/114264674-86ede000-99ec-11eb-82f8-3ad5a6904cb3.PNG)
  
  ### Stage(3)
@@ -122,6 +123,7 @@ being_debugged:
  * Press ```F8``` 
  * We see call that terminates sample not execute 
  * Nice to bypass this trick ..
+
 ![image4](https://user-images.githubusercontent.com/74544712/114266628-8ad32f80-99f7-11eb-9736-59a6d0d30e64.PNG)
 
 # References
