@@ -93,20 +93,24 @@ being_debugged:
 * I will put breakpoint in CheckRemoteDebuggerPresent() function 
 ![image(20)](https://user-images.githubusercontent.com/74544712/114263583-c1ed1500-99e6-11eb-9dce-98eac27f76b3.PNG)
 * Press ```F9``` to run sample
+
 ## Stage(2)
 * press ```f7``` to enter in this funtion and bypass the trick.
 * When i press ```F8``` in function to bypass the trick , i find this function NtQueryInformationProcess() which retrieves information about the specified process.
 ![Capture](https://user-images.githubusercontent.com/74544712/114264674-86ede000-99ec-11eb-82f8-3ad5a6904cb3.PNG).
+
 ## Stage(3)
  * Look at ```EAX``` at register EAX --> ```0000000```
  * Look at stack in the value being debugged ---> ```FFFFFFFF```
  * Compare the two values
  * To bypass this trick must  be changed```ffffffff``` (being debugged) to 0 because any value is not equal ```0``` the sample will terminate itself.
  ![Capture2](https://user-images.githubusercontent.com/74544712/114265718-b30c5f80-99f2-11eb-9ab2-6f9dcd8f02f6.PNG)
+ 
 ## Stage(4)
  * We notice that line ``` XOR EAX , EAX ``` ----> ```EAX``` ---->``` 0```
  * I will click right that compare two value ---> ```Assemble```---> change ```CMP``` to ```MOV``` and click ```assemble```
 ![image3](https://user-images.githubusercontent.com/74544712/114266598-7131e800-99f7-11eb-8c94-2ba6ee4be5f3.PNG)
+
 ## Stage(5) 
  * Press ```F8``` 
  * We see call that terminates sample not execute 
