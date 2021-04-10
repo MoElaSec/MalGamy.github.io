@@ -1,5 +1,5 @@
 ---
-title: Anti-debugging and anti-tracing techniques part3
+title: Anti-debugging and anti-tracing techniques part4
 layout: single
 comments: true
 share: true
