@@ -89,8 +89,9 @@ being_debugged:
 ## Bypass CheckRemoteDebuggerPresent
 ### Stage(1)
 * I will put breakpoint in CheckRemoteDebuggerPresent() function 
-![image(20)](https://user-images.githubusercontent.com/74544712/114263583-c1ed1500-99e6-11eb-9dce-98eac27f76b3.PNG)
 * Press ```F9``` to run sample
+![image(20)](https://user-images.githubusercontent.com/74544712/114263583-c1ed1500-99e6-11eb-9dce-98eac27f76b3.PNG)
+
 
 ### Stage(2)
 * press ```f7``` to enter in this funtion and bypass the trick.
