@@ -26,12 +26,10 @@ be going through anothor very commen technique that malware authors use it, [Che
 
 <!-- more -->
 # CheckRemoteDebuggerPresent()
-
+![image(1)](https://user-images.githubusercontent.com/74544712/114262513-aa129280-99e0-11eb-94c3-901fa4300b60.PNG)
 ## Description 
 
 * This Windows API can be used to detect if the calling process is being debugged through any debugger, but also if another process is being debugged.
-
-![image(1)](https://user-images.githubusercontent.com/74544712/114262513-aa129280-99e0-11eb-94c3-901fa4300b60.PNG)
 
 # Syntax
 ## MSDN
@@ -88,36 +86,36 @@ being_debugged:
 ## return Value 
 * If this function return 1 ----->  Debugger Found!
 * If this function return 0 --->  Debugger is not  Found!
-# Bypass CheckRemoteDebuggerPresent
-## Stage(1)
+## Bypass CheckRemoteDebuggerPresent
+### Stage(1)
 * I will put breakpoint in CheckRemoteDebuggerPresent() function 
 ![image(20)](https://user-images.githubusercontent.com/74544712/114263583-c1ed1500-99e6-11eb-9dce-98eac27f76b3.PNG)
 * Press ```F9``` to run sample
 
-## Stage(2)
+### Stage(2)
 * press ```f7``` to enter in this funtion and bypass the trick.
 * When i press ```F8``` in function to bypass the trick , i find this function NtQueryInformationProcess() which retrieves information about the specified process.
 ![Capture](https://user-images.githubusercontent.com/74544712/114264674-86ede000-99ec-11eb-82f8-3ad5a6904cb3.PNG).
 
-## Stage(3)
+### Stage(3)
  * Look at ```EAX``` at register EAX --> ```0000000```
  * Look at stack in the value being debugged ---> ```FFFFFFFF```
  * Compare the two values
  * To bypass this trick must  be changed```ffffffff``` (being debugged) to 0 because any value is not equal ```0``` the sample will terminate itself.
  ![Capture2](https://user-images.githubusercontent.com/74544712/114265718-b30c5f80-99f2-11eb-9ab2-6f9dcd8f02f6.PNG)
  
-## Stage(4)
+### Stage(4)
  * We notice that line ``` XOR EAX , EAX ``` ----> ```EAX``` ---->``` 0```
  * I will click right that compare two value ---> ```Assemble```---> change ```CMP``` to ```MOV``` and click ```assemble```
 ![image3](https://user-images.githubusercontent.com/74544712/114266598-7131e800-99f7-11eb-8c94-2ba6ee4be5f3.PNG)
 
-## Stage(5) 
+### Stage(5) 
  * Press ```F8``` 
  * We see call that terminates sample not execute 
  * Nice to bypass this trick.
  ![image4](https://user-images.githubusercontent.com/74544712/114266628-8ad32f80-99f7-11eb-9736-59a6d0d30e64.PNG)
  
-# References
+## References
 
 * https://anti-debug.checkpoint.com/techniques/debug-flags.html#using-win32-api-checkremotedebuggerpresent
 * https://www.codeproject.com/Articles/29469/Introduction-Into-Windows-Anti-Debugging
