@@ -22,8 +22,7 @@ toc_sticky: true
 In last week i published [IsDebuggerPresent()](https://malgamy.github.io/Anti-debugging-and-anti-tracing-techniques/)technique which function available in the kernel32.dll library.
 This function is often used in malware to complexify the reverse engineering because it will take different paths in the program’s flow when the 
 malware is analyzed in a user-mode debugger such as x32dbg and the most widely used anti-debugging method in Windows, Here i will
-be going through anothor very commen technique that malware authors use it
-,he [CheckRemoteDebuggerPresent()](https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-checkremotedebuggerpresent) from kernel32.dll.
+be going through anothor very commen technique that malware authors use it, [CheckRemoteDebuggerPresent()](https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-checkremotedebuggerpresent) from kernel32.dll.
 
 <!-- more -->
 # CheckRemoteDebuggerPresent()
