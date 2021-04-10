@@ -110,8 +110,9 @@ being_debugged:
 ## Stage(5) 
  * Press ```F8``` 
  * We see call that terminates sample not execute 
- * Nice to bypass this trick ..
+ * Nice to bypass this trick.
  ![image4](https://user-images.githubusercontent.com/74544712/114266628-8ad32f80-99f7-11eb-9736-59a6d0d30e64.PNG)
+ 
 # References
 
 * https://anti-debug.checkpoint.com/techniques/debug-flags.html#using-win32-api-checkremotedebuggerpresent
