@@ -107,7 +107,7 @@ being_debugged:
  
 ### Stage(4)
  * We notice that line ``` XOR EAX , EAX ``` ----> ```EAX``` ---->``` 0```
- * I will click right that compare two value ---> ```Assemble```---> change ```CMP``` to ```MOV``` and click ```assemble```
+ * I will click right in line that compare two value ---> ```Assemble```---> change ```CMP``` to ```MOV``` and click ```assemble```
 ![image3](https://user-images.githubusercontent.com/74544712/114266598-7131e800-99f7-11eb-8c94-2ba6ee4be5f3.PNG)
 
 ### Stage(5) 
