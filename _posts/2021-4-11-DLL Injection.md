@@ -26,7 +26,8 @@ Attackers use process injection as a type of anti reverse engineering to evade d
 <!-- more -->
 
 # DLL-injection 
-![khVpE](https://user-images.githubusercontent.com/74544712/114314130-b76f7000-9af9-11eb-9b33-92f9236702b1.png)
+![image1](https://user-images.githubusercontent.com/74544712/114314260-42506a80-9afa-11eb-8416-17a22fa8271b.PNG)
+
 
 
 DLL-Injection is the most common technique that used by malware to inject malicious code into other processes to evade detection, and every processes need to load dynamic link Libraries to work, So it became easy to load malicious code in legitimate processes
