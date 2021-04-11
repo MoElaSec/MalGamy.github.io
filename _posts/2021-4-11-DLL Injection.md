@@ -48,12 +48,10 @@ In the first, malware determined the process that's been injected with malicious
  ![attach](https://user-images.githubusercontent.com/74544712/114314699-05857300-9afc-11eb-970f-a6393ca98215.PNG)
  
 * Allocate Memory within the process.
-
  ![image3](https://user-images.githubusercontent.com/74544712/114315008-5cd81300-9afd-11eb-89c3-9b9a0dc4ec67.PNG)
 
 * Allocate Memory within the process
 * Copy filename (path) to process memory using VirtualAlloc().
-
  ![image4](https://user-images.githubusercontent.com/74544712/114315053-75e0c400-9afd-11eb-83d3-1dc5d266f131.PNG)
 
 
