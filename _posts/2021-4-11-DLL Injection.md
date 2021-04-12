@@ -79,7 +79,6 @@ and extract the payload from a sample .
 ![WriteMemoryaAlloc](https://user-images.githubusercontent.com/74544712/114435799-e1419900-9bc4-11eb-949b-08dc13cc99e8.png)
 
 * After dump ```Dump1``` into the memory map to dump it 
-
 ![MemoryDump](https://user-images.githubusercontent.com/74544712/114437039-56fa3480-9bc6-11eb-9e8a-c82d9cf2b70a.png)
 
 
