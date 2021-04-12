@@ -64,8 +64,7 @@ In the first, malware determined the process that's been injected with malicious
  ![image5](https://user-images.githubusercontent.com/74544712/114315151-d8d25b00-9afd-11eb-9072-623bc3d9c037.PNG)
 
 # Demo 
-* In this demo I will deep into discussing the functions on debugger that used by attackers to execute payload on a system
- and extract the payload from a sample.
+* In this demo I will discusse the functions on debugger that used by attackers to execute payload on a system and extract the payload from a sample.
  
  ![Captu12re](https://user-images.githubusercontent.com/74544712/114401622-64ea8e00-9ba3-11eb-9864-b038e3cfb261.PNG)
  
