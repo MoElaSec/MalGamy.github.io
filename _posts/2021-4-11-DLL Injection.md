@@ -48,31 +48,35 @@ In the first, malware determined the process that's been injected with malicious
 
 ### Step_4
 * After the previous steps, the malware determine a process that used to inject malicoius code.
-* the malware gets the handle of the target process by calling [OpenProces](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess) API.
-* Attach to the proces using OpenProcess().
+* To connect to the victim process, the malware uses a normal Windows API call [OpenProces](https://docs.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess). Because of Windows' privilege model, the malware can only bind to a process of the same or lower privilege as itself.
  ![attach](https://user-images.githubusercontent.com/74544712/114314699-05857300-9afc-11eb-970f-a6393ca98215.PNG)
  
 ### Step_5
-* Allocate Memory within the process.
+* VirtualAllocEx is used to allocate a limited amount of memory to the victim process. This memory is allocated by the use of "write" access. After that, the malware would use WriteProcessMemory to save the DLL's path to that memory place.
  ![image3](https://user-images.githubusercontent.com/74544712/114315008-5cd81300-9afd-11eb-89c3-9b9a0dc4ec67.PNG)
  
 ### Step_6
-* pass the address of LoadLibrary to one of these APIs so that a remote process has to execute DLL-injection technique.
+* Inside the victim process' region, the malware searches for the LoadLibrary function's address. This is the address that will be used in Step_7.
  ![image4](https://user-images.githubusercontent.com/74544712/114315053-75e0c400-9afd-11eb-83d3-1dc5d266f131.PNG)
 
 ### step_7
-* Finally, Creates a thread that runs in the virtual address space of another process to execute malicious code.
+* The malware invokes CreateRemoteThread, passing in the LoadLibrary address obtained in Step 6.It will also transfer the DLL path that was generated in Step 5.   CreateRemoteThread now runs in the victim process and calls LoadLibrary, which loads the malicious DLL. The DLL entry form, DLLMain, will be called when the malicious DLL loads.
  ![image5](https://user-images.githubusercontent.com/74544712/114315151-d8d25b00-9afd-11eb-9072-623bc3d9c037.PNG)
 
 # Demo 
-* In this demo I will deep into discussing the functions that used by attackers to execute payload on a system
-and extract the payload from a sample.
+* In this demo I will deep into discussing the functions on debugger that used by attackers to execute payload on a system
+and extract the payload from a sample .
+
 ![Captu12re](https://user-images.githubusercontent.com/74544712/114401622-64ea8e00-9ba3-11eb-9864-b038e3cfb261.PNG)
 
-
 * This sample use DLL-Injection to inject payload into legitimate process, malware determine the region of memory to write malicious payload onto and execute the payload. So we will set breakpoint on ```VirtualAllocEx```, ```WriteProcessMemory```, ```CreaterRemoteThread```.
- 
-![Cp](https://user-images.githubusercontent.com/74544712/114401042-d6760c80-9ba2-11eb-9bdf-2320e960dc9e.PNG)
+* 
+![Captu1re](https://user-images.githubusercontent.com/74544712/114410973-155c9000-9bac-11eb-8896-4f444b2df4ac.png)
+
+
+
+
+
 
 
 
