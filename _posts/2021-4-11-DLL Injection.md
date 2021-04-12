@@ -67,8 +67,7 @@ In the first, malware determined the process that's been injected with malicious
 # Demo 
 In this demo I will deep into discussing the functions that used by attackers to execute payload on a system
 and extract the payload from a sample.
-![khVpE1](https://user-images.githubusercontent.com/74544712/114399299-0fad7d00-9ba1-11eb-8c10-f17ba2f2517f.png)
-
+![Cap](https://user-images.githubusercontent.com/74544712/114400787-9c0c6f80-9ba2-11eb-803e-389f2a9b6e45.PNG)
 
 This sample use DLL-Injection to inject payload into legitimate process, malware determine the region of memory to write malicious payload onto and execute the payload. So we will set breakpoint on ```VirtualAllocEx```, ```WriteProcessMemory```, ```CreaterRemoteThread```.
 
