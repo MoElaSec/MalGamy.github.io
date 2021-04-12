@@ -65,11 +65,13 @@ In the first, malware determined the process that's been injected with malicious
  ![image5](https://user-images.githubusercontent.com/74544712/114315151-d8d25b00-9afd-11eb-9072-623bc3d9c037.PNG)
 
 # Demo 
-In this demo I will deep into discussing the functions that used by attackers to execute payload on a system
+* In this demo I will deep into discussing the functions that used by attackers to execute payload on a system
 and extract the payload from a sample.
+![Captu12re](https://user-images.githubusercontent.com/74544712/114401622-64ea8e00-9ba3-11eb-9864-b038e3cfb261.PNG)
 
-![Cap](https://user-images.githubusercontent.com/74544712/114400787-9c0c6f80-9ba2-11eb-803e-389f2a9b6e45.PNG)
-This sample use DLL-Injection to inject payload into legitimate process, malware determine the region of memory to write malicious payload onto and execute the payload. So we will set breakpoint on ```VirtualAllocEx```, ```WriteProcessMemory```, ```CreaterRemoteThread```.
+
+* This sample use DLL-Injection to inject payload into legitimate process, malware determine the region of memory to write malicious payload onto and execute the payload. So we will set breakpoint on ```VirtualAllocEx```, ```WriteProcessMemory```, ```CreaterRemoteThread```.
+ 
 ![Cp](https://user-images.githubusercontent.com/74544712/114401042-d6760c80-9ba2-11eb-9bdf-2320e960dc9e.PNG)
 
 
