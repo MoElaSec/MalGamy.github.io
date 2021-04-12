@@ -67,7 +67,7 @@ In the first, malware determined the process that's been injected with malicious
 * In this demo I will deep into discussing the functions on debugger that used by attackers to execute payload on a system
 and extract the payload from a sample .
 
-  ![Captu12re](https://user-images.githubusercontent.com/74544712/114401622-64ea8e00-9ba3-11eb-9864-b038e3cfb261.PNG)
+ ![Captu12re](https://user-images.githubusercontent.com/74544712/114401622-64ea8e00-9ba3-11eb-9864-b038e3cfb261.PNG)
 
 * This sample use DLL-Injection to inject payload into legitimate process, malware determine the region of memory to write malicious payload onto and execute the payload. So we will set breakpoint on ```VirtualAllocEx```, ```WriteProcessMemory```, ```CreaterRemoteThread```.
  ![Captu1re](https://user-images.githubusercontent.com/74544712/114414886-82bdf000-9baf-11eb-9c0c-c14f90a6e640.png)
@@ -79,7 +79,9 @@ and extract the payload from a sample .
 ![WriteMemoryaAlloc](https://user-images.githubusercontent.com/74544712/114435799-e1419900-9bc4-11eb-949b-08dc13cc99e8.png)
 
 * After dump ```Dump1``` into the memory map to dump it 
-![WriteMemoryaAlloc](https://user-images.githubusercontent.com/74544712/114436220-5dd47780-9bc5-11eb-8a86-b84c654521d6.png)
+
+![MemoryDump](https://user-images.githubusercontent.com/74544712/114437039-56fa3480-9bc6-11eb-9e8a-c82d9cf2b70a.png)
+
 
 * Nice, I finish my work.
 
