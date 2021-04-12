@@ -70,6 +70,7 @@ and extract the payload from a sample .
  ![Captu12re](https://user-images.githubusercontent.com/74544712/114401622-64ea8e00-9ba3-11eb-9864-b038e3cfb261.PNG)
 
 * This sample use DLL-Injection to inject payload into legitimate process, malware determine the region of memory to write malicious payload onto and execute the payload. So we will set breakpoint on ```VirtualAllocEx```, ```WriteProcessMemory```, ```CreaterRemoteThread```.
+
  ![Captu1re](https://user-images.githubusercontent.com/74544712/114414886-82bdf000-9baf-11eb-9c0c-c14f90a6e640.png)
  
 * when run ```F9``` and execute VitualAllocEX() that allocates space for the entire path of the DLL if we use LoadLibraryA(), and we'll allocate space for the DLL's full contents.
