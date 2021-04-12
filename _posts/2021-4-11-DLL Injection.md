@@ -61,7 +61,7 @@ In the first, malware determined the process that's been injected with malicious
  ![image4](https://user-images.githubusercontent.com/74544712/114315053-75e0c400-9afd-11eb-83d3-1dc5d266f131.PNG)
 
 ### step_7
-* The malware invokes CreateRemoteThread, passing in the LoadLibrary address obtained in Step 6.It will also transfer the DLL path that was generated in Step 5.   CreateRemoteThread now runs in the victim process and calls LoadLibrary, which loads the malicious DLL. The DLL entry form, DLLMain, will be called when the malicious DLL loads.
+* The malware invokes CreateRemoteThread, passing in the LoadLibrary address obtained in Step_6.It will also transfer the DLL path that was generated in Step_5.   CreateRemoteThread now runs in the victim process and calls LoadLibrary, which loads the malicious DLL. The DLL entry form, DLLMain, will be called when the malicious DLL loads.
  ![image5](https://user-images.githubusercontent.com/74544712/114315151-d8d25b00-9afd-11eb-9072-623bc3d9c037.PNG)
 
 # Demo 
@@ -71,8 +71,9 @@ and extract the payload from a sample .
 ![Captu12re](https://user-images.githubusercontent.com/74544712/114401622-64ea8e00-9ba3-11eb-9864-b038e3cfb261.PNG)
 
 * This sample use DLL-Injection to inject payload into legitimate process, malware determine the region of memory to write malicious payload onto and execute the payload. So we will set breakpoint on ```VirtualAllocEx```, ```WriteProcessMemory```, ```CreaterRemoteThread```.
-* 
+
 ![Captu1re](https://user-images.githubusercontent.com/74544712/114410973-155c9000-9bac-11eb-8896-4f444b2df4ac.png)
+
 
 
 
