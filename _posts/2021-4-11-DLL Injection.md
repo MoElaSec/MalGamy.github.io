@@ -26,7 +26,7 @@ Attackers use process injection as a type of anti reverse engineering to evade d
 <!-- more -->
 
 # DLL-injection 
-![image1](https://user-images.githubusercontent.com/74544712/114314260-42506a80-9afa-11eb-8416-17a22fa8271b.PNG)
+ ![image1](https://user-images.githubusercontent.com/74544712/114314260-42506a80-9afa-11eb-8416-17a22fa8271b.PNG)
 
 
 
@@ -67,10 +67,29 @@ In the first, malware determined the process that's been injected with malicious
 * In this demo I will deep into discussing the functions on debugger that used by attackers to execute payload on a system
 and extract the payload from a sample .
 
-![Captu12re](https://user-images.githubusercontent.com/74544712/114401622-64ea8e00-9ba3-11eb-9864-b038e3cfb261.PNG)
+ ![Captu12re](https://user-images.githubusercontent.com/74544712/114401622-64ea8e00-9ba3-11eb-9864-b038e3cfb261.PNG)
 
 * This sample use DLL-Injection to inject payload into legitimate process, malware determine the region of memory to write malicious payload onto and execute the payload. So we will set breakpoint on ```VirtualAllocEx```, ```WriteProcessMemory```, ```CreaterRemoteThread```.
-![Captu1re](https://user-images.githubusercontent.com/74544712/114414886-82bdf000-9baf-11eb-9c0c-c14f90a6e640.png)
+ ![Captu1re](https://user-images.githubusercontent.com/74544712/114414886-82bdf000-9baf-11eb-9c0c-c14f90a6e640.png)
+ 
+* when run ```F9``` and execute VitualAllocEX() that allocates space for the entire path of the DLL if we use LoadLibraryA(), and we'll allocate space for the DLL's full contents.
+![vitualAlloc](https://user-images.githubusercontent.com/74544712/114434163-fd443b00-9bc2-11eb-99a3-817bb2b843a8.png)
+
+* Now that malware spaces allocated in our target process to write payload using WriteProcessMemory() into this process , and stores the paylaod into one parameters of WriteProcessMemory()  called buffer which have DLL Path or the Full DLL into that process, we can dump buffer into the dump in order to see paylaod.
+![WriteMemoryaAlloc](https://user-images.githubusercontent.com/74544712/114435799-e1419900-9bc4-11eb-949b-08dc13cc99e8.png)
+
+* After dump ```Dump1``` into the memory map to dump it 
+![WriteMemoryaAlloc](https://user-images.githubusercontent.com/74544712/114436220-5dd47780-9bc5-11eb-8a86-b84c654521d6.png)
+
+* Nice, I finish my work.
+
+## References
+
+* mastering malware analysis 
+* https://attack.mitre.org/techniques/T1055/001/
+* https://www.elastic.co/blog/ten-process-injection-techniques-technical-survey-common-and-trending-process
+* http://blog.opensecurityresearch.com/2013/01/windows-dll-injection-basics.html
+
 
 
 
