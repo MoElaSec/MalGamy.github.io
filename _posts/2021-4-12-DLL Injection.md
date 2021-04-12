@@ -68,16 +68,16 @@ In the first, malware determined the process that's been injected with malicious
  <p align="center">
   <img width="460" height="300" src="https://user-images.githubusercontent.com/74544712/114401622-64ea8e00-9ba3-11eb-9864-b038e3cfb261.PNG">
 </p>
-* This sample use DLL-Injection to inject payload into legitimate process, malware determine the region of memory to write malicious payload onto and execute the payload. So we   will set breakpoint on ```VirtualAllocEx```, ```WriteProcessMemory```, ```CreaterRemoteThread```.
+* This sample use DLL-Injection to inject payload into legitimate process, malware determine the region of memory to write malicious payload onto and execute the payload. So we   will set breakpoint on ```VirtualAllocEx```, ```WriteProcessMemory```, ```CreaterRemoteThread```.<br>
  ![Captu1re](https://user-images.githubusercontent.com/74544712/114414886-82bdf000-9baf-11eb-9c0c-c14f90a6e640.png)
  
-* when run ```F9``` and execute VitualAllocEX() that allocates space for the entire path of the DLL if we use LoadLibraryA(), and we'll allocate space for the DLL's full contents.
+* when run ```F9``` and execute VitualAllocEX() that allocates space for the entire path of the DLL if we use LoadLibraryA(), and we'll allocate space for the DLL's full contents.<br>
 ![vitualAlloc](https://user-images.githubusercontent.com/74544712/114434163-fd443b00-9bc2-11eb-99a3-817bb2b843a8.png)
 
-* Now that malware spaces allocated in our target process to write payload using WriteProcessMemory() into this process , and stores the paylaod into one parameters of WriteProcessMemory()  called buffer which have DLL Path or the Full DLL into that process, we can dump buffer into the dump in order to see paylaod.
+* Now that malware spaces allocated in our target process to write payload using WriteProcessMemory() into this process , and stores the paylaod into one parameters of WriteProcessMemory()  called buffer which have DLL Path or the Full DLL into that process, we can dump buffer into the dump in order to see paylaod.<br>
 ![WriteMemoryaAlloc](https://user-images.githubusercontent.com/74544712/114435799-e1419900-9bc4-11eb-949b-08dc13cc99e8.png)
 
-* After dump ```Dump1``` into the memory map to dump it 
+* After dump ```Dump1``` into the memory map to dump it<br> 
 ![MemoryDump](https://user-images.githubusercontent.com/74544712/114437039-56fa3480-9bc6-11eb-9e8a-c82d9cf2b70a.png)
 
 * Nice, I finish my work.
