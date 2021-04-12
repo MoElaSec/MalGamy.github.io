@@ -57,7 +57,6 @@ In the first, malware determined the process that's been injected with malicious
  
 ### Step_6
 * Inside the victim process' region, the malware searches for the LoadLibrary function's address. This is the address that will be used in Step_7.
-
  ![image4](https://user-images.githubusercontent.com/74544712/114315053-75e0c400-9afd-11eb-83d3-1dc5d266f131.PNG)
 
 ### step_7
