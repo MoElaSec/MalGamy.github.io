@@ -8,11 +8,11 @@ author_profile: true
 permalink: "/:title/"
 tags:
 - malware analysis 
-- anti-debugging
-- anit-tracing
+- DLL_injection
+- Process Injection 
 categories:
 - Articles
-date: '2021-4-4 11-00-00 +0000'
+date: '2021-4-4 12-00-00 +0000'
 toc: true
 toc_label: Table of Contents
 toc_sticky: true
