@@ -70,8 +70,8 @@ and extract the payload from a sample .
 ![Captu12re](https://user-images.githubusercontent.com/74544712/114401622-64ea8e00-9ba3-11eb-9864-b038e3cfb261.PNG)
 
 * This sample use DLL-Injection to inject payload into legitimate process, malware determine the region of memory to write malicious payload onto and execute the payload. So we will set breakpoint on ```VirtualAllocEx```, ```WriteProcessMemory```, ```CreaterRemoteThread```.
+![Captu1re](https://user-images.githubusercontent.com/74544712/114414886-82bdf000-9baf-11eb-9c0c-c14f90a6e640.png)
 
-![Captu1re](https://user-images.githubusercontent.com/74544712/114410973-155c9000-9bac-11eb-8896-4f444b2df4ac.png)
 
 
 
