@@ -79,12 +79,13 @@ changes between window Xp and Windows Vista or above are reason of changes in wi
 Before dipping into discussing how bypass this technique let us demonstrate ways to detect the debugger
 ### Frist way
 * check the returned the value in EAX which depending on the Windows version
+
 ### second Way 
-* GetLastError in Windows XP . If you don't have a Ring3 debugger, you'll get an error message that calls this API after the OutputDebugString.
- If EAX == 0 ---> a debugger has been detected 
+* GetLastError in Windows XP . If you don't have a Ring3 debugger, you'll get an error message that calls this API after the OutputDebugString. If EAX == 0 ---> a debugger has been detected
+
 ### thrid way 
-* Through SEH  Works in all Windows Versions from XP and
-above, not tested in Windows 8.
+* Through SEH  Works in all Windows Versions from XP and above, not tested in Windows 8.
+
 ### fourth way
 * Olly Debugger would fail if you submit a string with the format % s % s % s. (tested up to OllyDbg v1.10).This is just a debugger-specific trick that takes advantage of a bug
 and Olly Debugger will crash in this case 
