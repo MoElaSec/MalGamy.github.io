@@ -89,3 +89,32 @@ Before dipping into discussing how bypass this technique let us demonstrate ways
 ### fourth way
 * Olly Debugger would fail if you submit a string with the format % s % s % s. (tested up to OllyDbg v1.10).This is just a debugger-specific trick that takes advantage of a bug
 and Olly Debugger will crash in this case 
+## demo
+To bypass this trick, we do not execute code inside this function to prevent detecting the debugger 
+### Stage(1)
+
+* we will breakpoint in OutPutDebugStringA() API by pressing ```F2```
+* press ```F7``` to enter in code function of OutPutDebugStringA()
+
+![demo1](https://user-images.githubusercontent.com/74544712/115112785-75c24780-9f87-11eb-8738-5b655f7ecc8f.PNG)
+
+### Stage(2)
+
+* AFter entering the code function, my goal is to prevent executing the code inside this API(), so I will assemble frist Instruction yo ``` RET 4 ```
+* the value 4 to pop the parameter ``` "%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%" ``` from the stack to prevent the sample detectes the olly with bug 
+
+![demo2](https://user-images.githubusercontent.com/74544712/115112965-29c3d280-9f88-11eb-852e-4e7b27e878cb.PNG)
+
+### Stage(3)
+
+* After executing ```RET 4 ```,  debugger will bypass this trick.
+
+## References 
+* parctical malware analysis 
+* https://docs.microsoft.com/en-us/windows/win32/api/debugapi/nf-debugapi-outputdebugstringa
+* https://www.aldeid.com/wiki/OutputDebugString
+* https://www.deepinstinct.com/2017/12/27/common-anti-debugging-techniques-in-the-malware-landscape/
+
+ 
+
+
