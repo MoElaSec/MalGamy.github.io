@@ -26,7 +26,7 @@ And how bypass it using a debugger
 #  OutputDebugString
 ![Outputdebuggingstring](https://user-images.githubusercontent.com/74544712/115109147-5f5ec080-9f74-11eb-86c2-280a0d115376.PNG)
 ## Description 
-The Kernel32 outputDebugString () function that use to detect a debugger and explains different behaviour depended on the version of windows and it
+The Kernel32 outputDebugString () function that uses to detect a debugger and explains different behaviour depended on the version of windows and it
 Outputs a string to a debugger to attach it.
 ## Syntax
 ### c++
