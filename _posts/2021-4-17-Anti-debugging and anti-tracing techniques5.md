@@ -67,12 +67,12 @@ je being_debugged
 ## Return value
 
 ### Windows XP
-* If the process is being debugged     ----> EAX will return 0 
-* If the process is not being debugged ----> EAX will return 1 
+* If the process is being debugged     ---> EAX will return 0 
+* If the process is not being debugged ---> EAX will return 1 
 
 ### Windows Vista and above
-* If the process is being debugged     ----> EAX will return 1
-* If the process is not being debugged ----> EAX will return 0
+* If the process is being debugged     ---> EAX will return 1
+* If the process is not being debugged ---> EAX will return 0
 changes between window Xp and Windows Vista or above are reason of changes in window internal
 
 ## Bypass OutputDebugString()
@@ -81,7 +81,7 @@ Before dipping into discussing how bypass this technique let us demonstrate ways
 * check the returned the value in EAX which depending on the Windows version
 
 ### second Way 
-* GetLastError in Windows XP . If you don't have a Ring3 debugger, you'll get an error message that calls this API after the OutputDebugString. If EAX == 0 ---> a debugger has been detected
+* GetLastError in Windows XP . If you don't have a Ring3 debugger, you'll get an error message that calls this API after the OutputDebugString. If EAX == 0 --> a debugger has been detected
 
 ### thrid way 
 * Through SEH  Works in all Windows Versions from XP and above, not tested in Windows 8.
