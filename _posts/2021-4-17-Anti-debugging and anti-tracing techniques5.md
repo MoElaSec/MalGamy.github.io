@@ -72,6 +72,7 @@ je being_debugged
 * If the process is being debugged     ----> EAX will return 1
 * If the process is not being debugged ----> EAX will return 0
 changes between window Xp and Windows Vista or above are reason of changes in window internal
+
 ## Bypass OutputDebugString()
 Before dipping into discussing how bypass this technique let us demonstrate ways to detect the debugger
 ### Frist way
