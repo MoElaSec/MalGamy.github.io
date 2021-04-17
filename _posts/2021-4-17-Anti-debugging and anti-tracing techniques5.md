@@ -84,7 +84,7 @@ Before dipping into discussing how bypass this technique let us demonstrate ways
 2- GetLastError in Windows XP . If you don't have a Ring3 debugger, you'll get an error message that calls this API after the OutputDebugString. If EAX == 0 --> a debugger has been detected
 
  
-3- Through SEH  Works in all Windows Versions from XP and above, not tested in Windows 8.
+3- Through SEH Works in all Windows Versions from XP and above, not tested in Windows 8.
 
 
 4- Olly Debugger would fail if you submit a string with the format % s % s % s. (tested up to OllyDbg v1.10).This is just a debugger-specific trick that takes advantage of a bug
