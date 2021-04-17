@@ -65,6 +65,7 @@ cmp gs:[rbp+68h], ebp ;LastErrorValue
 je being_debugged
 ```
 ## Return value
+
 ### Windows XP
 * If the process is being debugged     ----> EAX will return 0 
 * If the process is not being debugged ----> EAX will return 1 
