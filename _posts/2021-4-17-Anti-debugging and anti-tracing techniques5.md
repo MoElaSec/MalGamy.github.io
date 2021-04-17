@@ -69,6 +69,7 @@ je being_debugged
 ### Windows XP
 * If the process is being debugged     ----> EAX will return 0 
 * If the process is not being debugged ----> EAX will return 1 
+
 ### Windows Vista and above
 * If the process is being debugged     ----> EAX will return 1
 * If the process is not being debugged ----> EAX will return 0
